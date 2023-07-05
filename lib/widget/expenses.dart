@@ -1,5 +1,6 @@
 import 'package:expense_trucker/models/expense.dart';
 import 'package:expense_trucker/widget/expenses_list.dart';
+import 'package:expense_trucker/widget/new_expensive.dart';
 import 'package:flutter/material.dart';
 
 class Expenses extends StatefulWidget {
@@ -28,8 +29,7 @@ class _ExpensesState extends State<Expenses> {
   void _showModalSheet() {
     showModalBottomSheet(
       context: context,
-      builder: (ctx) =>
-          Center(child: Text('Hello world  Je suis un Jeune Millionnaire')),
+      builder: (ctx) => const NewExpensive(),
     );
   }
 
