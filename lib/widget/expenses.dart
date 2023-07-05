@@ -25,16 +25,35 @@ class _ExpensesState extends State<Expenses> {
     ),
   ];
 
+  void _showModalSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) =>
+          Center(child: Text('Hello world  Je suis un Jeune Millionnaire')),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const Text("Chart"),
-          Expanded(
-            child: ExpenseList(expenses: _expenses),
+      appBar: AppBar(
+        title: Text("Flutter Expensive Trucker"),
+        actions: [
+          IconButton(
+            onPressed: _showModalSheet,
+            icon: Icon(Icons.add),
           ),
         ],
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            const Text("Chart"),
+            Expanded(
+              child: ExpenseList(expenses: _expenses),
+            ),
+          ],
+        ),
       ),
     );
   }
